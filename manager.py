@@ -97,7 +97,7 @@ add_button.pack()
 
 data = []
 
-with open("{MANAGER_INSTALL_PATH}/config/connections.csv", newline="") as connections:
+with open(f"{MANAGER_INSTALL_PATH}/config/connections.csv", newline="") as connections:
     reader = csv.DictReader(connections, delimiter=",")
     for row in reader:
         data.append(row)
