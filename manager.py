@@ -189,7 +189,7 @@ display_all_connections_available()
 Button(root_tk, text="Quit", command=quit, fg="white", bg="#464646").place(x=730, y=830)
 
 # icon management
-icon = PhotoImage(file="pywg-icon.png")
+icon = PhotoImage(file=f"{MANAGER_INSTALL_PATH}/pywg-icon.png")
 root_tk.iconphoto(True, icon)
 
 root_tk.mainloop()
