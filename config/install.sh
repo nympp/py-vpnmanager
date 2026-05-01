@@ -1,3 +1,5 @@
+# Buggy, do not use for now
+
 echo "Welcome to the installer for pyWG GUI!"
 echo "Retrieving latest version..."
 git clone https://github.com/nympp/py-vpnmanager.git
