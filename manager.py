@@ -28,19 +28,19 @@ def ac_select_file():
     # To select the wireguard config file, opens where you set to in the config file, default is /home
     file = filedialog.askopenfilename(initialdir=f"{BASE_OPEN_PATH}", filetypes=(("Wireguard Conf Files", "*.conf"), ("All files", "*.*")))
 
-    showfile = Label(ac_popup_tk, text=f"File selected : {file}")
+    showfile = Label(ac_popup_tk, text=f"File selected : {file}", bg="#1e1e1e", fg="white")
     showfile.pack()
 
 
-    Label(ac_popup_tk, text="Enter the file name (avoid '*', '/', '.', ':') :").pack()
-    enter_filename = Text(ac_popup_tk, height=1, width=20)
+    Label(ac_popup_tk, text="Enter the file name (avoid '*', '/', '.', ':') :", bg="#1e1e1e", fg="white").pack()
+    enter_filename = Text(ac_popup_tk, height=1, width=20, fg="white", bg="#464646")
     enter_filename.pack()
 
-    Label(ac_popup_tk, text="Enter the pretty file name (the one that will be displayed on the manager) :").pack()
-    enter_prettyfilename = Text(ac_popup_tk, height=1, width=20)
+    Label(ac_popup_tk, text="Enter the pretty file name (the one that will be displayed on the manager) :", bg="#1e1e1e", fg="white").pack()
+    enter_prettyfilename = Text(ac_popup_tk, height=1, width=20, fg="white", bg="#464646")
     enter_prettyfilename.pack()
 
-    Button(ac_popup_tk, text="Add connection", command=add_connection_to_wg).pack()
+    Button(ac_popup_tk, text="Add connection", command=add_connection_to_wg, fg="white", bg="#464646").pack()
 
 
 def add_connection():
@@ -49,8 +49,9 @@ def add_connection():
     ac_popup_tk = Tk()
     ac_popup_tk.geometry(f"{600}x{600}")
     ac_popup_tk.title("Add a new Wireguard connection")
+    ac_popup_tk.configure(bg="#1e1e1e")
 
-    select_file_button = Button(ac_popup_tk, text="Select .conf file", command=ac_select_file)
+    select_file_button = Button(ac_popup_tk, text="Select .conf file", command=ac_select_file, fg="white", bg="#464646")
     select_file_button.pack()
     
 
