@@ -35,7 +35,7 @@ def ac_select_file():
     showfile.pack()
 
     # Label & Text zone for the filename that will be used by wireguard (will be save as FILENAME.conf)
-    Label(ac_popup_tk, text="Enter the file name (avoid '*', '/', '.', ':') :", bg="#1e1e1e", fg="white").pack()
+    Label(ac_popup_tk, text="Enter the file name (avoid '*', '/', '.', ':', ',') :", bg="#1e1e1e", fg="white").pack()
     enter_filename = Text(ac_popup_tk, height=1, width=20, fg="white", bg="#464646")
     enter_filename.pack()
 
@@ -257,10 +257,10 @@ subprocess.run(["sudo", "echo", "Done!"])
 # Setting up the window
 root_tk = Tk() # base Tk, named root_tk
 root_tk.geometry(f"{800}x{870}") # window size
-root_tk.title("Wireguard Connections Manager")
+root_tk.title("pyWG-GUI - Wireguard Connections Manager")
 root_tk.configure(bg="#1e1e1e")
 
-main_title = Label(root_tk, text="Wireguard Connection Manager", font=("Arial", 16, "bold"), fg="white", bg="#1e1e1e")
+main_title = Label(root_tk, text="Wireguard Connections Manager", font=("Arial", 16, "bold"), fg="white", bg="#1e1e1e")
 main_title.place(x=10, y=8)
 
 ttk.Separator(root_tk, orient="horizontal").pack(fill="x", pady=40)
