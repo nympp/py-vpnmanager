@@ -4,8 +4,8 @@
 ################################################
 
 # CHANGE THIS :
-MANAGER_INSTALL_PATH = "/home/phileas/Documents/Git/pywg-gui" #"~/Documents/pywg-gui"
-BASE_OPEN_PATH = "/home/phileas/Téléchargements"
+MANAGER_INSTALL_PATH = "~/Documents/pywg-gui"
+BASE_OPEN_PATH = "/home/"
 
 # Libraries import
 
@@ -187,9 +187,31 @@ def display_all_connections_available_mc():
         Label(mc_popup_tk, text=f"{prettyname}", fg="white", bg="#464646").place(x=20, y=h+12)
 
         Button(mc_popup_tk, text="Rename", command=lambda f=filename, p=prettyname: rename_popup(f,p), fg="white", bg="#1B1B1B").place(x=412, y=h+7)
-        Button(mc_popup_tk, text="Delete", command=disconnect_interfaces, fg="white", bg="#1B1B1B").place(x=508, y=h+7)
+        Button(mc_popup_tk, text="Delete", command=lambda f=filename: delete_interface(f), fg="white", bg="#1B1B1B").place(x=508, y=h+7)
 
         h += 50
+
+def delete_interface(interface_filename: str):
+    
+    csv_file = f"{MANAGER_INSTALL_PATH}/config/connections.csv"
+    temp_csv_file = f"{MANAGER_INSTALL_PATH}/config/temp.csv"
+
+    vpn_filename_to_delte = interface_filename
+
+    with open(csv_file, mode="r", newline="", encoding="utf-8") as infile, \
+     open(temp_csv_file, mode="w", newline="", encoding="utf-8") as outfile:
+        
+        reader = csv.DictReader(infile)
+        fields = reader.fieldnames
+
+        writer = csv.DictWriter(outfile, fieldnames=fields)
+        writer.writeheader()
+
+        for row in reader:
+            if row["file_name"] != interface_filename:
+                writer.writerow(row)
+    
+    os.replace(temp_csv_file, csv_file)
 
 def rename_connection(filename: str):
     global new_prettyname_input, rename_mc_popup_tk
