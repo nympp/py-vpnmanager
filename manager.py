@@ -5,7 +5,7 @@
 
 # CHANGE THIS :
 MANAGER_INSTALL_PATH = "~/Documents/pywg-gui"
-BASE_OPEN_PATH = "/home/"
+BASE_OPEN_PATH = "/home"
 
 # Libraries import
 
