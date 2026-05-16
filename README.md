@@ -99,7 +99,7 @@ Add the following :
 ```desktop
 [Desktop Entry]
 Name=pyWG GUI
-Exec=python /home/user/Documents/my-folder/pywg-gui/manager.py
+Exec=sudo python /home/user/Documents/my-folder/pywg-gui/manager.py
 Terminal=true
 Type=Application
 Icon=/home/user/Documents/my-folder/pywg-gui/pywg-icon.png
