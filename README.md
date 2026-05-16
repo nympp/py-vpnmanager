@@ -100,7 +100,7 @@ Add the following :
 [Desktop Entry]
 Name=pyWG GUI
 Exec=python /home/user/Documents/my-folder/pywg-gui/manager.py
-Terminal=false
+Terminal=true
 Type=Application
 Icon=/home/user/Documents/my-folder/pywg-gui/pywg-icon.png
 Comment=python Wireguard GUI
